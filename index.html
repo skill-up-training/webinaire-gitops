@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue de Formations - Security Mindset</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #800000; 
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 2rem;
+        }
+
+        section {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .formation {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            padding: 1.5rem;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .formation:hover {
+            transform: scale(1.05);
+        }
+
+        .formation h2 {
+            color: #800000; 
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .formation p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            margin-top: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #800000;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin: 0.2rem;
+        }
+
+        .btn {
+            background-color: #800000; 
+            color: white;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b22222;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #800000;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Catalogue de Formations - Security Mindset
+    </header>
+
+    <section>
+        <article class="formation">
+            <h2>Cyber Sécurité</h2>
+            <p>Découvrez les concepts fondamentaux et avancés de la cybersécurité, avec des cours sur la gestion des risques, la protection des systèmes et la défense contre les attaques.</p>
+            <div class="tags">
+                <span class="tag">SOC Analyst</span>
+                <span class="tag">DevSecOps</span>
+                <span class="tag">GRC & Audit</span>
+                <span class="tag">IAM</span>
+                <span class="tag">Vulnerability Management</span>
+                <span class="tag">Cloud Security</span>
+                <span class="tag">Pentest</span>
+            </div>
+            <a href="#" class="btn">En savoir plus</a>
+        </article>
+
+        <article class="formation">
+            <h2>Cloud</h2>
+            <p>Maîtrisez les services cloud, leur sécurisation et l'architecture des infrastructures pour un environnement distribué et résilient.</p>
+            <div class="tags">
+                <span class="tag">AWS</span>
+                <span class="tag">Azure</span>
+                <span class="tag">GCP</span>
+            </div>
+            <a href="#" class="btn">En savoir plus</a>
+        </article>
+
+        <article class="formation">
+            <h2>Data</h2>
+            <p>Apprenez à gérer et protéger les données, avec un focus sur la conformité, les pratiques de protection des données sensibles et la cybersécurité des bases de données.</p>
+            <div class="tags">
+                <span class="tag">Data Engineer</span>
+                <span class="tag">Data Analyst</span>
+                <span class="tag">Data Scientist</span>
+                <span class="tag">Power BI</span>
+            </div>
+            <a href="#" class="btn">En savoir plus</a>
+        </article>
+
+        <article class="formation">
+            <h2>Intelligence Artificielle (IA)</h2>
+            <p>Comprenez comment l'IA peut être sécurisée, avec des sujets tels que la défense contre les attaques adversariales et la conception de systèmes IA robustes.</p>
+            <div class="tags">
+                <span class="tag">MLOps</span>
+                <span class="tag">Machine Learning</span>
+            </div>
+            <a href="#" class="btn">En savoir plus</a>
+        </article>
+
+        <article class="formation">
+            <h2>DevOps</h2>
+            <p>Intégrez les meilleures pratiques DevOps avec la sécurité, et apprenez à automatiser les processus tout en garantissant la sécurité des environnements de développement.</p>
+            <div class="tags">
+                <span class="tag">IaC</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">Monitoring & Alerting</span>
+                <span class="tag">Logs & Observability</span>
+            </div>
+            <a href="#" class="btn">En savoir plus</a>
+        </article>
+    </section>
+
+    <footer>
+        &copy; 2024 Security Mindset. Tous droits réservés.
+    </footer>
+</body>
+</html>

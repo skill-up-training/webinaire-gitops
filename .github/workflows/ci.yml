@@ -1,0 +1,48 @@
+name: Build and Update Image
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    name: Build and Publish to Github Packages Registry
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2.3.2
+
+    - name: Build Project
+      run:  ng build --configuration production
+    - name: Build and Publish API to Github Packages Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+          name: sm-appsec/smplatform:0.1
+          registry: ghcr.io
+          username: ${{secrets.REGISTRY_USER_NAME}}
+          password: ${{secrets.REGISTRY_PWD }}
+          dockerfile: Dockerfile
+    
+    # Update project
+
+    - name: Clone the second repo
+      uses: actions/checkout@v2
+      with:
+        repository: <your-username>/<second-repo-name>
+        token: ${{ secrets.REGISTRY_PWD }}
+        path: second-repo
+
+    # Update the image tag in the Kubernetes deployment file in the second repo
+
+    - name: Update image in second repo
+      run: |
+          cd second-repo
+          sed -i "s|image: .*|image: ${{ secrets.REGISTRY_USER_NAME }}/my-nginx:latest|" nginx-deployment.yml
+    - name: Commit and push changes
+      run: |
+          cd second-repo
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update image to ${{ secrets.REGISTRY_USER_NAME }}/my-nginx:latest"
+          git push origin main
+
+  
