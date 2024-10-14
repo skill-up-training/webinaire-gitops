@@ -3,8 +3,7 @@ on:
   push:
     branches: [main]
 env:
-  - name: TAG
-    value: 0.1
+  TAG: 0.1
 jobs:
   build:
     name: Build and Publish to Github Packages Registry
