@@ -26,7 +26,7 @@ jobs:
     - name: Clone the second repo
       uses: actions/checkout@v2
       with:
-        repository: <your-username>/<second-repo-name>
+        repository: https://github.com/skill-up-training/webinaire-gitops-projet2
         token: ${{ secrets.REGISTRY_PWD }}
         path: second-repo
 
