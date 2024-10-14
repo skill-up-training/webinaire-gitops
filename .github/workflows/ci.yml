@@ -2,6 +2,9 @@ name: Build and Update Image
 on:
   push:
     branches: [main]
+env:
+  - name: TAG
+    value: 0.1
 jobs:
   build:
     name: Build and Publish to Github Packages Registry
@@ -13,7 +16,7 @@ jobs:
     - name: Build and Publish API to Github Packages Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-          name: sm-appsec/smplatform:0.1
+          name: skill-up-training/webinaire-gitops:${{ env.TAG }}
           registry: ghcr.io
           username: ${{secrets.REGISTRY_USER_NAME}}
           password: ${{secrets.REGISTRY_PWD }}
@@ -33,7 +36,7 @@ jobs:
     - name: Update image in second repo
       run: |
           cd second-repo
-          sed -i "s|image: .*|image: ${{ secrets.REGISTRY_USER_NAME }}/my-nginx:latest|" nginx-deployment.yml
+          sed -i "s|image: .*|image: skill-up-training/webinaire-gitops:${{ env.TAG }}|" nginx-deployment.yml
     - name: Commit and push changes
       run: |
           cd second-repo
