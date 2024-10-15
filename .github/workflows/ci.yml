@@ -35,7 +35,7 @@ jobs:
     - name: Update image in second repo
       run: |
           cd second-repo
-          sed -i "s|image: .*|image: skill-up-training/webinaire-gitops:${{ env.TAG }}|" nginx-deployment.yml
+          sed -i "s|image: .*|image: ghcr.io/skill-up-training/webinaire-gitops:${{ env.TAG }}|" nginx-deployment.yml
     - name: Commit and push changes
       run: |
           cd second-repo
